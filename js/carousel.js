@@ -6,28 +6,28 @@ var previous = document.getElementById('previous');
 
 carousel.style.marginLeft = 0;
 
+window.onload = function() {
+    next.onmouseover = function(event) {
+      console.log(event);
+     next.style.opacity = 0.2;
+     carousel.style.marginLeft += 10;
+    };
 
-next.onmouseover = function(event) {
-  console.log(event);
- next.style.opacity = 0.2;
+    next.onmouseout = function(event) {
+      console.log(event);
+      next.style.opacity = 0.5;
+    };
+
+    previous.onmouseover = function(event) {
+      console.log(event);
+      previous.style.opacity = 0.2;
+    };
+
+    previous.onmouseout = function(event) {
+      console.log(event);
+      previous.style.opacity = 0.5;
+    };
 };
-
-next.onmouseout = function(event) {
-  console.log(event);
-  next.style.opacity = 0.5;
-};
-
-
-previous.onmouseover = function(event) {
-  console.log(event);
-  previous.style.opacity = 0.2;
-};
-
-previous.onmouseout = function(event) {
-  console.log(event);
-  previous.style.opacity = 0.5;
-};
-
 
 
 

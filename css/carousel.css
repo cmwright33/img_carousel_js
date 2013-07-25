@@ -41,6 +41,12 @@ body {
   cursor: pointer;
 }
 
+.btn {
+  position: absolute;
+  left: 250px;
+  bottom: 5px;
+}
+
 #next {
   right: 15px;
   left: auto;
