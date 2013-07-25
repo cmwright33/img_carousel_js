@@ -6,11 +6,15 @@ var previous = document.getElementById('previous');
 
 carousel.style.marginLeft = 0;
 
+function moveImage() {
+  carousel.style.marginLeft = 900;
+};
+
 window.onload = function() {
     next.onmouseover = function(event) {
       console.log(event);
      next.style.opacity = 0.2;
-     carousel.style.marginLeft += 10;
+     console.log(next.addEventListener=("mouseover", moveImage));
     };
 
     next.onmouseout = function(event) {
