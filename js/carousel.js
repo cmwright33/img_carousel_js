@@ -3,9 +3,14 @@ var carousel = document.getElementById('carousel');
 // Buttons
 var next = document.getElementById('next');
 var previous = document.getElementById('previous');
+var rotate = document.getElementById('CarouselRotate');
+
+
+//  Image and carousel properties
+carousel.style.marginLeft = 0;
 var imgPixelWidth = 612;
 var images = 3;
-carousel.style.marginLeft = 0;
+
 
 // Event Listener Functions
 
@@ -25,8 +30,14 @@ function toRight(){
   };
 };
 
-// Event Listeners
+function rotate() {
 
+}
+
+
+
+// Event Listeners
+rotate.addEventListener("click", Rotate )
 next.addEventListener("mouseover", toRight);
 previous.addEventListener("mouseover", toLeft);
 
@@ -50,6 +61,11 @@ window.onload = function() {
       console.log(event);
       this.style.opacity = 0.5;
     };
+
+    rotate.onclick = function(event) {
+      console.log(event)
+    };
+
 };
 
 
