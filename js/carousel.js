@@ -3,18 +3,37 @@ var carousel = document.getElementById('carousel');
 // Buttons
 var next = document.getElementById('next');
 var previous = document.getElementById('previous');
-
+var imgPixelWidth = 612;
+var images = 3;
 carousel.style.marginLeft = 0;
 
-function moveImage() {
-  carousel.style.marginLeft = 900;
+// Event Listener Functions
+
+function toLeft() {
+   var currentMargin = parseInt(carousel.style.marginLeft);
+    carousel.style.marginLeft = (currentMargin - imgPixelWidth) + "px";
+  if (Math.abs(currentMargin) === (images - 1) * imgPixelWidth) {
+    carousel.style.marginLeft = "0px";
+  };
 };
+
+function toRight(){
+  var currentMargin = parseInt(carousel.style.marginLeft);
+    carousel.style.marginLeft = (currentMargin + imgPixelWidth) + "px";
+  if (Math.abs(currentMargin) === 0) {
+    carousel.style.marginLeft = (-(images - 1) * imgPixelWidth) + "px";
+  };
+};
+
+// Event Listeners
+
+next.addEventListener("mouseover", toRight);
+previous.addEventListener("mouseover", toLeft);
 
 window.onload = function() {
     next.onmouseover = function(event) {
       console.log(event);
      this.style.opacity = 0.2;
-     console.log(next.addEventListener=("mouseover", moveImage));
     };
 
     next.onmouseout = function(event) {
@@ -34,10 +53,6 @@ window.onload = function() {
 };
 
 
-
-
-
-next.addEventListener("click", next);
 // Create mouseoveer and mouseexit events for the buttons
 // to change their opacity from .5 to .2
 
