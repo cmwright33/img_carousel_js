@@ -13,23 +13,23 @@ function moveImage() {
 window.onload = function() {
     next.onmouseover = function(event) {
       console.log(event);
-     next.style.opacity = 0.2;
+     this.style.opacity = 0.2;
      console.log(next.addEventListener=("mouseover", moveImage));
     };
 
     next.onmouseout = function(event) {
       console.log(event);
-      next.style.opacity = 0.5;
+      this.style.opacity = 0.5;
     };
 
     previous.onmouseover = function(event) {
       console.log(event);
-      previous.style.opacity = 0.2;
+      this.style.opacity = 0.2;
     };
 
     previous.onmouseout = function(event) {
       console.log(event);
-      previous.style.opacity = 0.5;
+      this.style.opacity = 0.5;
     };
 };
 
